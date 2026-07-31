@@ -2,11 +2,356 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=/aurafy-legal/">
-<link rel="canonical" href="https://aurafyapp.github.io/aurafy-legal/">
-<title>Aurafy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurafy — Read the Energy · Aura, Love &amp; Shadow Readings</title>
+<meta name="description" content="Aurafy turns 20 questions into a reading — your aura color, who loves you, red flag or green flag, your shadow self. Psychology-inspired, fully offline, no account. Free on Google Play.">
+<meta name="theme-color" content="#0C1633">
+<link rel="icon" type="image/png" href="/aurafy-legal/icon.png">
+<link rel="apple-touch-icon" href="/aurafy-legal/icon.png">
+<link rel="canonical" href="https://aurafyapp.github.io/">
+
+<meta property="og:site_name" content="Aurafy">
+<meta property="og:title" content="Aurafy — Read the Energy">
+<meta property="og:description" content="Your aura color. Who loves you. Red flag or green flag. Psychology-inspired readings, fully offline. Free on Google Play.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aurafyapp.github.io/">
+<meta property="og:image" content="https://aurafyapp.github.io/aurafy-legal/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@aurafy_appX">
+<meta name="twitter:title" content="Aurafy — Read the Energy">
+<meta name="twitter:description" content="Your aura color. Who loves you. Red flag or green flag. Fully offline. Free on Google Play.">
+<meta name="twitter:image" content="https://aurafyapp.github.io/aurafy-legal/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-deep:#080B1C; --bg-mid:#0C1633;
+  --violet:#A855F7; --cyan:#22D3EE; --magenta:#C026D3; --mint:#A7F3D0; --gold:#E8B04B; --green:#3BE08F;
+  --text:#EDEAF7; --soft:#B8B2D4; --faint:#7E789C;
+  --card:rgba(255,255,255,.035); --border:rgba(167,139,250,.18);
+  --fd:'Playfair Display',Georgia,serif; --fb:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg-deep);color:var(--text);line-height:1.7;font-size:16.5px;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(ellipse 90% 55% at 50% -8%,rgba(124,107,212,.30),transparent 70%),
+  radial-gradient(ellipse 55% 45% at 92% 24%,rgba(34,211,238,.12),transparent 70%),
+  radial-gradient(ellipse 65% 55% at 4% 78%,rgba(16,185,129,.09),transparent 70%),
+  linear-gradient(180deg,#0C1633 0%,#0A0E22 55%,#080E14 100%)}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+
+/* ---------- hero ---------- */
+header.hero{padding:64px 0 40px;text-align:center;position:relative}
+.mark{width:132px;height:132px;margin:0 auto 4px;position:relative;
+  filter:drop-shadow(0 14px 44px rgba(34,211,238,.28)) drop-shadow(0 4px 18px rgba(192,38,211,.20))}
+.mark svg{width:100%;height:100%;display:block;border-radius:24px}
+@keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes eyeBreathe{0%,100%{opacity:.82;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes pupilPulse{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.14)}}
+@keyframes twinkle{0%,100%{opacity:.45}50%{opacity:1}}
+.mark .orbits{transform-origin:512px 512px;animation:orbitSpin 46s linear infinite}
+.mark .eye{transform-origin:512px 512px;animation:eyeBreathe 6s ease-in-out infinite}
+.mark .pupilGlow{transform-origin:512px 512px;animation:pupilPulse 3.6s ease-in-out infinite}
+.mark .d1,.mark .d2,.mark .d3,.mark .d4{animation:twinkle 3.6s ease-in-out infinite}
+.mark .d2{animation-delay:.9s}.mark .d3{animation-delay:1.8s}.mark .d4{animation-delay:2.6s}
+.eyebrow{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--cyan);margin:14px 0 10px}
+h1{font-family:var(--fd);font-weight:700;font-size:clamp(46px,10vw,76px);line-height:1.04;letter-spacing:.04em;
+  background:linear-gradient(135deg,#FFF 0%,#C8E9FA 45%,var(--cyan) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{font-family:var(--fd);font-style:italic;color:var(--soft);font-size:clamp(17px,3.4vw,21px);margin:10px 0 22px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#22D3EE,#7C5CE8);
+  color:#06121A;font-weight:700;font-size:17px;padding:15px 32px;border-radius:999px;text-decoration:none;
+  box-shadow:0 8px 34px rgba(34,211,238,.35);transition:transform .18s,box-shadow .18s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 42px rgba(34,211,238,.5)}
+.cta svg{width:20px;height:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.chip{font-size:12.5px;font-weight:600;color:var(--soft);border:1px solid var(--border);background:var(--card);
+  padding:6px 14px;border-radius:999px}
+.langs{margin-top:14px;font-size:13px;color:var(--faint);letter-spacing:.06em}
+
+/* ---------- sections ---------- */
+section{padding:34px 0 6px}
+.kicker{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;text-align:center}
+h2{font-family:var(--fd);font-weight:600;font-size:clamp(24px,5vw,32px);text-align:center;margin-bottom:8px}
+.lead{color:var(--soft);text-align:center;max-width:640px;margin:0 auto 26px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px 26px;margin-bottom:16px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px 20px;text-align:center}
+.step .n{font-family:var(--fd);font-size:15px;color:var(--gold);letter-spacing:.2em;margin-bottom:8px}
+.step h3{font-family:var(--fd);font-weight:600;font-size:18px;margin-bottom:6px}
+.step p{color:var(--soft);font-size:14.5px}
+
+/* aura orbs */
+.orbs{display:flex;flex-wrap:wrap;gap:18px 22px;justify-content:center;padding:8px 0 4px}
+.orb{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:default}
+.orb .ball{width:56px;height:56px;border-radius:50%;position:relative;transition:transform .25s}
+.orb:hover .ball{transform:scale(1.18)}
+.orb .ball::after{content:'';position:absolute;inset:-14px;border-radius:50%;background:inherit;filter:blur(16px);opacity:.55;z-index:-1}
+.orb span{font-size:12.5px;color:var(--faint);font-weight:600}
+.orb.black .ball{border:1.5px solid var(--violet)}
+
+/* modules */
+.modgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.mod{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.mod h4{font-family:var(--fd);font-weight:600;font-size:16.5px;margin-bottom:4px}
+.mod p{color:var(--soft);font-size:13.8px;line-height:1.55}
+.mod .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:2px 8px;border-radius:999px;margin-bottom:8px}
+.t-love{background:rgba(226,63,168,.13);color:var(--magenta);border:1px solid rgba(226,63,168,.3)}
+.t-self{background:rgba(34,211,238,.11);color:var(--cyan);border:1px solid rgba(34,211,238,.3)}
+
+/* features */
+.feats{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.feat h4{font-weight:700;font-size:15.5px;margin-bottom:4px;color:var(--violet)}
+.feat p{color:var(--soft);font-size:14px}
+
+.note{border-left:2px solid var(--gold);background:rgba(232,176,75,.07);border-radius:0 10px 10px 0;
+  padding:14px 18px;margin:20px auto;max-width:720px;font-size:14.5px;color:var(--soft)}
+.note strong{color:var(--text)}
+
+.socials{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.social{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;
+  border:1px solid var(--border);background:var(--card);padding:11px 20px;border-radius:999px;
+  font-size:14.5px;transition:border-color .2s,transform .2s,background .2s}
+.social:hover{border-color:var(--cyan);transform:translateY(-2px);background:rgba(34,211,238,.07)}
+.social svg{width:19px;height:19px;flex-shrink:0;color:var(--cyan)}
+.s-name{font-weight:700}
+.s-handle{color:var(--faint);font-weight:600;font-size:13.5px}
+@media(max-width:520px){.socials{flex-direction:column;align-items:stretch}
+  .social{justify-content:flex-start}.s-handle{margin-left:auto}}
+
+.finale{text-align:center;padding:44px 0 30px}
+.finale .tagline{margin-bottom:24px}
+
+footer{border-top:1px solid var(--border);margin-top:30px;padding:28px 0 40px;text-align:center;
+  color:var(--faint);font-size:13.5px}
+footer nav{display:flex;gap:18px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+footer a{color:var(--soft);text-decoration:none}
+footer a:hover{color:var(--cyan)}
+
+@media(max-width:680px){
+  .steps{grid-template-columns:1fr}
+  body{font-size:16px}
+  header.hero{padding-top:48px}
+}
+@media(prefers-reduced-motion:reduce){
+  .mark .orbits,.mark .eye,.mark .pupilGlow,.mark .d1,.mark .d2,.mark .d3,.mark .d4{animation:none}
+  .cta,.orb .ball{transition:none}
+}
+</style>
 </head>
 <body>
-<p>Redirecting to <a href="/aurafy-legal/">Aurafy</a>&hellip;</p>
+<div class="wrap">
+
+<header class="hero">
+  <div class="mark" aria-hidden="true">
+    <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img">
+      <defs>
+        <linearGradient id="iconBg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#0D0B2B"/>
+          <stop offset="45%" stop-color="#0C1633"/>
+          <stop offset="100%" stop-color="#0A2421"/>
+        </linearGradient>
+        <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#5B8FE0" stop-opacity=".68"/>
+          <stop offset="40%" stop-color="#2C6FA8" stop-opacity=".40"/>
+          <stop offset="75%" stop-color="#12496E" stop-opacity=".20"/>
+          <stop offset="100%" stop-color="#0E2C46" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="lensFill" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#7FA8F0" stop-opacity=".85"/>
+          <stop offset="35%" stop-color="#3576B5" stop-opacity=".62"/>
+          <stop offset="100%" stop-color="#123F62" stop-opacity=".42"/>
+        </radialGradient>
+        <radialGradient id="pupilGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#C026D3" stop-opacity=".8"/>
+          <stop offset="50%" stop-color="#8B2AC0" stop-opacity=".25"/>
+          <stop offset="100%" stop-color="#5B2A9E" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="dotV" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#A855F7" stop-opacity=".7"/>
+          <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="dotG" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#34D399" stop-opacity=".75"/>
+          <stop offset="100%" stop-color="#34D399" stop-opacity="0"/>
+        </radialGradient>
+        <clipPath id="tile"><rect width="1024" height="1024" rx="228"/></clipPath>
+      </defs>
+
+      <g clip-path="url(#tile)">
+        <rect width="1024" height="1024" fill="url(#iconBg)"/>
+
+        <!-- eye: soft glow + lens fill, no stroke -->
+        <ellipse class="eye" cx="512" cy="512" rx="300" ry="185" fill="url(#eyeGlow)"/>
+        <path d="M300 512 Q512 306 724 512 Q512 718 300 512 Z" fill="url(#lensFill)"/>
+
+        <!-- the two orbits -->
+        <g class="orbits">
+          <g fill="none" stroke="#22D3EE" stroke-width="30" stroke-opacity=".085">
+            <ellipse cx="512" cy="512" rx="158" ry="384" transform="rotate(48 512 512)"/>
+            <ellipse cx="512" cy="512" rx="158" ry="384" transform="rotate(-48 512 512)"/>
+          </g>
+          <g fill="none" stroke="#22D3EE" stroke-width="13" stroke-opacity=".95">
+            <ellipse cx="512" cy="512" rx="158" ry="384" transform="rotate(48 512 512)"/>
+            <ellipse cx="512" cy="512" rx="158" ry="384" transform="rotate(-48 512 512)"/>
+          </g>
+        </g>
+
+        <!-- pupil -->
+        <circle class="pupilGlow" cx="512" cy="512" r="100" fill="url(#pupilGlow)"/>
+        <circle cx="512" cy="512" r="40" fill="#C026D3"/>
+        <circle cx="512" cy="512" r="11" fill="#FFFFFF"/>
+
+        <!-- aura dots riding the orbits -->
+        <g class="d1"><circle cx="696" cy="240" r="44" fill="url(#dotV)"/><circle cx="696" cy="240" r="15" fill="#A855F7"/></g>
+        <g class="d2"><circle cx="238" cy="352" r="32" fill="url(#dotV)"/><circle cx="238" cy="352" r="12" fill="#A855F7"/></g>
+        <g class="d3"><circle cx="300" cy="745" r="32" fill="url(#dotV)"/><circle cx="300" cy="745" r="12" fill="#A855F7"/></g>
+        <g class="d4"><circle cx="788" cy="718" r="48" fill="url(#dotG)"/><circle cx="788" cy="718" r="19" fill="#10B981"/><circle cx="788" cy="718" r="8" fill="#A7F3D0"/></g>
+      </g>
+    </svg>
+  </div>
+  <div class="eyebrow">Read the Energy</div>
+  <h1>AURAFY</h1>
+  <p class="tagline">Twenty questions. One reading. The pattern you already felt.</p>
+  <a class="cta" href="https://play.google.com/store/apps/details?id=com.simobr.aurafy">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.4.2-.6.6-.6 1.1v18.2c0 .5.2.9.6 1.1l10.2-10.2L3.6 1.8zm12 8.4L6.9 1.5l10.9 6.3-2.2 2.4zm3.7 1.2l-2.6-1.5-2.5 2.6 2.5 2.6 2.6-1.5c.8-.5.8-1.7 0-2.2zM6.9 22.5l8.7-8.7 2.2 2.4-10.9 6.3z"/></svg>
+    Get it on Google Play — Free
+  </a>
+  <div class="chips">
+    <span class="chip">100% Offline</span>
+    <span class="chip">No account · No sign-up</span>
+    <span class="chip">Nothing leaves your phone</span>
+    <span class="chip">Free forever</span>
+  </div>
+  <p class="langs">English &nbsp;·&nbsp; Français &nbsp;·&nbsp; العربية &nbsp;·&nbsp; Español</p>
+</header>
+
+<section>
+  <div class="kicker">The idea</div>
+  <h2>Questions you already ask yourself</h2>
+  <p class="lead">Who in my circle actually loves me? Is this person a red flag? Why do I keep my walls up? Aurafy turns those questions into structured readings — built on psychology-inspired frameworks like attachment theory, love languages, sociometry and color psychology, and delivered in a language that feels like a reading, not a test.</p>
+  <div class="steps">
+    <div class="step"><div class="n">I</div><h3>Choose a reading</h3><p>About someone in your life, your whole circle — or about you.</p></div>
+    <div class="step"><div class="n">II</div><h3>Answer 20 questions</h3><p>Honest, quick, drawn from a pool that keeps every reading fresh.</p></div>
+    <div class="step"><div class="n">III</div><h3>Receive the verdict</h3><p>A result card with meaning, insights — and a share card that's yours to keep.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">The signature reading</div>
+  <h2>Your aura has a color</h2>
+  <p class="lead">Eight outcomes — including the rare Black and White auras. Which one is yours?</p>
+  <div class="orbs">
+    <div class="orb"><div class="ball" style="background:radial-gradient(circle at 38% 32%,#fff,#F5F1FF 55%,#CFC6E8)"></div><span>White</span></div>
+    <div class="orb"><div class="ball" style="background:radial-gradient(circle at 38% 32%,#FFE2AC,#E8B04B 60%,#8A6220)"></div><span>Gold</span></div>
+    <div class="orb"><div class="ball" style="background:radial-gradient(circle at 38% 32%,#FFC4E5,#F27EC4 60%,#8F3A73)"></div><span>Pink</span></div>
+    <div class="orb"><div class="ball" style="background:radial-gradient(circle at 38% 32%,#FF9AA5,#E24B5A 60%,#7E1F29)"></div><span>Red</span></div>
+    <div class="orb"><div class="ball" style="background:radial-gradient(circle at 38% 32%,#A7F5CE,#3BE08F 60%,#146B44)"></div><span>Green</span></div>
+    <div class="orb"><div class="ball" style="background:radial-gradient(circle at 38% 32%,#A9EDFA,#22D3EE 60%,#0E5E6E)"></div><span>Blue</span></div>
+    <div class="orb"><div class="ball" style="background:radial-gradient(circle at 38% 32%,#D6C7FF,#A78BFA 60%,#4A3894)"></div><span>Violet</span></div>
+    <div class="orb black"><div class="ball" style="background:radial-gradient(circle at 38% 32%,#3A2F63,#12101F 65%,#0A0916)"></div><span>Black</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">Inside the app</div>
+  <h2>Thirteen readings, two directions</h2>
+  <p class="lead">Some readings look outward — at the people around you. Some look inward — at the pattern that is you.</p>
+  <div class="modgrid">
+    <div class="mod"><span class="tag t-love">Your circle</span><h4>Who Loves Me</h4><p>Rank your people by who actually shows up for you.</p></div>
+    <div class="mod"><span class="tag t-love">Your circle</span><h4>Red Flag or Green Flag</h4><p>One person, twenty questions, one verdict. 🚩 or ✅</p></div>
+    <div class="mod"><span class="tag t-love">Your circle</span><h4>Soulmate Energy</h4><p>Which connection carries the deepest resonance.</p></div>
+    <div class="mod"><span class="tag t-love">Your circle</span><h4>Who's Jealous of Me</h4><p>Read the quiet competition inside your circle.</p></div>
+    <div class="mod"><span class="tag t-love">Your circle</span><h4>Who Might Hurt Me</h4><p>The reading nobody wants — and everyone runs first.</p></div>
+    <div class="mod"><span class="tag t-love">Your circle</span><h4>Who Admires Me</h4><p>The people who see you more clearly than you think.</p></div>
+    <div class="mod"><span class="tag t-love">Your circle</span><h4>Who To Cut Off</h4><p>Where your energy leaks — and where the door is.</p></div>
+    <div class="mod"><span class="tag t-love">Your circle</span><h4>Energy Reading</h4><p>The overall charge each person brings into your life.</p></div>
+    <div class="mod"><span class="tag t-self">You</span><h4>Aura Color</h4><p>Eight colors. One is unmistakably yours.</p></div>
+    <div class="mod"><span class="tag t-self">You</span><h4>Shadow Self</h4><p>The part of you that runs the show from backstage.</p></div>
+    <div class="mod"><span class="tag t-self">You</span><h4>Attachment Style</h4><p>How you bond, hold on, and let go — and why.</p></div>
+    <div class="mod"><span class="tag t-self">You</span><h4>Am I the Problem?</h4><p>The brave reading. Honest mirror, kind voice.</p></div>
+    <div class="mod"><span class="tag t-self">You</span><h4>Am I Healing?</h4><p>Where you actually are on the road back to yourself.</p></div>
+  </div>
+  <p class="lead" style="margin-top:18px;font-size:14.5px;color:var(--faint)">New readings, themes and features drop in regular updates — follow <strong style="color:var(--soft)">@aurafy.app</strong> to catch every drop.</p>
+</section>
+
+<section>
+  <div class="kicker">Why people keep it</div>
+  <h2>Built differently, on purpose</h2>
+  <div class="feats">
+    <div class="feat"><h4>Fully offline</h4><p>Every reading is computed on your device. Airplane mode? Still works. No servers exist.</p></div>
+    <div class="feat"><h4>Radically private</h4><p>No account, no sign-up, no cloud. Names you type and answers you give never leave your phone.</p></div>
+    <div class="feat"><h4>Four languages, really</h4><p>English, French, Spanish — and full right-to-left Arabic. Authored by hand, not machine-translated.</p></div>
+    <div class="feat"><h4>Stars ✦ — never money</h4><p>A free in-app currency you earn by showing up. It unlocks readings and themes. There is nothing to buy.</p></div>
+    <div class="feat"><h4>Share cards</h4><p>Every result becomes a beautiful image card — save it, post it, or keep it to yourself.</p></div>
+    <div class="feat"><h4>Themes &amp; streaks</h4><p>Unlockable visual themes, daily quotes, and a streak that rewards coming back.</p></div>
+  </div>
+  <div class="note"><strong>Made for reflection and entertainment.</strong> Aurafy is not a psychological assessment, diagnosis, therapy, or professional advice of any kind — it's a mirror, held with care.</div>
+</section>
+
+<section>
+  <div class="kicker">Privacy in one paragraph</div>
+  <h2>No servers. No accounts. No data trail.</h2>
+  <p class="lead">Aurafy has nothing to collect your data <em>with</em>. The only third party involved is Google AdMob, which serves the ads that keep the app free. The full detail lives in the <a href="/aurafy-legal/privacy.html" style="color:var(--cyan)">Privacy Policy</a>.</p>
+</section>
+
+<section>
+  <div class="kicker">Follow the energy</div>
+  <h2>Where the drops land first</h2>
+  <div class="socials">
+    <a class="social" href="https://www.instagram.com/aurafy_app" rel="me noopener" target="_blank">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4" fill="none" stroke="currentColor" stroke-width="1.9"/>
+        <circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="1.9"/>
+        <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/>
+      </svg>
+      <span class="s-name">Instagram</span><span class="s-handle">@aurafy_app</span>
+    </a>
+    <a class="social" href="https://www.tiktok.com/@aurafy.app" rel="me noopener" target="_blank">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M16.9 2.4h-3.2v13a2.6 2.6 0 1 1-2.1-2.55V9.6a5.9 5.9 0 1 0 5.3 5.87V8.86a7.2 7.2 0 0 0 4.2 1.35V7.02a4.2 4.2 0 0 1-4.2-4.2z"/>
+      </svg>
+      <span class="s-name">TikTok</span><span class="s-handle">@aurafy.app</span>
+    </a>
+    <a class="social" href="https://x.com/aurafy_appX" rel="me noopener" target="_blank">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/>
+      </svg>
+      <span class="s-name">X</span><span class="s-handle">@aurafy_appX</span>
+    </a>
+  </div>
+</section>
+
+<div class="finale">
+  <p class="tagline">The reading is waiting.</p>
+  <a class="cta" href="https://play.google.com/store/apps/details?id=com.simobr.aurafy">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.4.2-.6.6-.6 1.1v18.2c0 .5.2.9.6 1.1l10.2-10.2L3.6 1.8zm12 8.4L6.9 1.5l10.9 6.3-2.2 2.4zm3.7 1.2l-2.6-1.5-2.5 2.6 2.5 2.6 2.6-1.5c.8-.5.8-1.7 0-2.2zM6.9 22.5l8.7-8.7 2.2 2.4-10.9 6.3z"/></svg>
+    Get Aurafy — Free on Google Play
+  </a>
+</div>
+
+<footer>
+  <nav>
+    <a href="/aurafy-legal/privacy.html">Privacy</a>
+    <a href="/aurafy-legal/terms.html">Terms</a>
+    <a href="mailto:aurafy.app26@gmail.com">Contact</a>
+    <a href="/get/">Direct download link</a>
+  </nav>
+  <p>Aurafy — an independent app by Simobr Studio, Morocco.</p>
+  <p>© 2026 Simobr Studio. All rights reserved.</p>
+</footer>
+
+</div>
 </body>
 </html>
